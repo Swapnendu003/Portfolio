@@ -239,13 +239,13 @@ body {
     max-height: 100%;
     position: relative;
     top: -50px;
-    margin-left: 5px;
   }
 
   .description {
     text-align: left;
     margin-left: 0;
     margin-top: -60px;
+    margin-left: 5px;
   }
 
   .heading {
