@@ -1,215 +1,239 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    color: white;
-    background: linear-gradient(to bottom, #000000, #000055);
-  }
-  
-  .container {
-    max-width: 1000px;
-    width: 90%;
-    margin: 25px auto;
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
-    border: 1px solid black;
-    background-color: rgba(0, 0, 0, 0.8);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    opacity: 0.5;
-    border-radius: 2%;
-  }
-  
-  .container1 {
-    flex: 1; /* Take up available space */
-    max-width: 250px; /* Adjusted width for container1 */
-    padding: 20px;
- 
-    margin-right: 20px; /* Added spacing between containers */
-  }
-  .image{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    margin: auto;
-    
-    transition: transform 0.3s, box-shadow 0.3s; 
-    margin-bottom: 20px
-  }
-  
-  .image img {
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 50%; 
-  }
-  
-  .image:hover {
-    transform: scale(1.1); /* Apply scaling effect on hover */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Add a glowing effect */
-  }
-  .options {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar-section {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.nav-header {
+  display: flex;
+  align-items: center;
+}
+
+.avatar img {
+  position: absolute;
+  top: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+  font-family: 'REM', sans-serif;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+}
+
+@media (min-width: 769px) {
+  .nav-toggle {
     display: none;
   }
-  
-  .options button {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    margin: 5px;
-    cursor: pointer;
-  }
-  
-  .options button:hover {
-    background-color: #2980b9;
-  }
-  .details {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .details h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .details h2 {
-    font-size: 18px;
-    color: #3498db; /* Add a cool color */
-    margin-bottom: 15px;
-  }
-  
-  .details p {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  .details {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-    color: white;
-  }
-  .social {
+
+  .nav-links {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 20px; /* Add spacing between details and social container */
   }
   
-  .social a {
-    display: inline-block;
-    margin: 0 10px;
-    font-size: 24px; /* Adjust icon size */
-    color: white;
-    transition: transform 0.3s, opacity 0.3s;
+  .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
   }
-  
-  .social a:hover {
-    transform: scale(1.2); /* Apply scaling effect on hover */
-    opacity: 0.7; /* Reduce opacity on hover */
+
+  .nav-links a:hover {
+    color: rgba(2, 92, 188, 0.95);
   }
-  
-  .container2 {
+}
+
+/* Styles for smaller screens */
+@media (min-width: 769px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-links {
     display: flex;
-    flex-wrap: wrap;
-    flex: 2; /* Take up twice the available space */
-    max-width: calc(100% - 290px); /* Adjusted width for container2 */
-    padding: 20px;
-
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
   }
 
-.card-set {
+  .nav-links a:hover {
+    color: #007bff;
+  }
+}
+
+/* Styles for smaller screens */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    margin-right: 20px; /* Adjust this to position the toggle bars on the right */
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95); /* Light background color */
+    width: 80%;
+    max-width: 300px;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+    z-index: 1001;
+  }
+
+  .navbar-section.open .nav-links {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #333; /* Dark gray text color */
+    transition: color 0.3s;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .nav-links a:hover {
+    color: #007bff;
+    background-color: rgba(0, 123, 255, 0.1);
+    border-radius: 4px;
+  }
+
+  .navbar-section.open {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+
+
+.home {
+  position: relative;
+  height: 82.5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  background: linear-gradient(45deg, #1E90FF, #8A2BE2);
+}
+
+
+.image {
+  flex: 0 0 auto; 
+  margin-right: 100px; 
+}
+
+.description {
+  flex: 1 1 auto; 
   display: flex;
   flex-direction: column;
-  flex: 1;
-  margin: 10px;
+  justify-content: center; 
+}
+.heading{
+  font-family: 'Black Ops One', cursive;
+  font-size: 50px;
+}
+.name{
+  color: rgba(255, 244, 128, 0.95);
+  font-family: 'Barriecito', cursive;
+  
+}
+@keyframes glowAnimation {
+  from {
+    text-shadow: 0 0 5px rgba(255, 244, 128, 0.95); /* Start with a shadow matching text color */
+  }
+  to {
+    text-shadow: 0 0 20px rgba(255, 244, 128, 0.95); /* End with a stronger and slightly different color shadow */
+  }
 }
 
-.content {
-  flex: 1;
-  padding: 20px;
-  margin: 10px;
-
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-  color: white;
+.name:hover{
+  text-shadow: 0 0 5px rgba(255, 244, 128, 0.95);
+  animation: glowAnimation 1s infinite alternate;
+}
+.intro{
+  font-family: 'Handjet', cursive;
+  font-size: 30px;
 }
 
-.content h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #3498db; /* Stylish heading color */
+#social {
+
+  display: flex;
+  gap: 20px; /* Spacing between icons */
+  align-items: center;
+  margin-top: 10px; /* Add some spacing from the intro */
 }
 
-.content p {
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.content ul {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-.content a {
-  color: #3498db;
+#social a {
+  color: rgba(255, 244, 128, 0.95); /* Icon color */
+  font-size: 30px; /* Adjust icon size */
   text-decoration: none;
   transition: color 0.3s;
 }
 
-.content a:hover {
-  color: #2980b9;
+#social a:hover {
+  color: #ff4400; /* Hover color */
 }
-
-.arrow-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 30px;
-  height: 30px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  outline: none;
-}
-.arrow-button::before {
-  content: '\f078';
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-  font-size: 20px;
-  color: white;
-}
-
-.full-content {
-  display: none;
-  padding: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-  margin-top: 10px;
-  color: white;
-}
-
-.show-full-content {
-  display: block;
-}
-  @media (max-width: 768px) {
-    .container1,
-    .container2 {
-      max-width: 100%; /* Full width on smaller screens */
-      margin-right: 0; /* Reset margin */
-      margin-bottom: 20px; /* Added spacing between containers */
-    }
-  }
-  
