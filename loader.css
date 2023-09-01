@@ -1,82 +1,112 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  section{
+}
+section {
     display: flex;
-    height: 100vh;
-    width: 100%;
-    background: #000;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
-  .loader{
+    height: 100vh;
+    background: #000;
+}
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.loader {
     height: 25px;
     width: 25px;
     position: relative;
-    animation: rotate 5s  infinite;
-  }
-  .ball{
+    animation: rotate 5s infinite;
+}
+.ball {
     position: absolute;
     height: 25px;
     width: 25px;
     border-radius: 50%;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  }
-  .upper{
+}
+.upper {
     left: 0;
     top: -22px;
     background: #2da2ff;
     animation: upper 1s linear infinite;
-  }
-  @keyframes upper {
-    50%{
-      top: 22px;
+}
+@keyframes upper {
+    50% {
+        top: 22px;
     }
-    100%{
-      top: 22px;
+    100% {
+        top: 22px;
     }
-  }
-  .right{
+}
+.right {
     right: -22px;
     top: 0;
     background: #ff337a;
     animation: right 1s linear infinite;
-  }
-  @keyframes right {
-    50%{
-      right: 22px;
+}
+@keyframes right {
+    50% {
+        right: 22px;
     }
-    100%{
-      right: 22px;
+    100% {
+        right: 22px;
     }
-  }
-  .lower{
+}
+.lower {
     bottom: -22px;
     left: 0;
     background: #ffff00;
     animation: lower 1s linear infinite;
-  }
-  @keyframes lower {
-    50%{
-      bottom: 22px;
+}
+@keyframes lower {
+    50% {
+        bottom: 22px;
     }
-    100%{
-      bottom: 22px;
+    100% {
+        bottom: 22px;
     }
-  }
-  .left{
+}
+.left {
     left: -22px;
     top: 0;
     background: #00ff00;
     animation: left 1s linear infinite;
-  }
-  @keyframes left {
-    50%{
-      left: 22px;
+}
+@keyframes left {
+    50% {
+        left: 22px;
     }
-    100%{
-      left: 22px;
+    100% {
+        left: 22px;
     }
-  }
+}
+.loading-text {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    animation: textAnimation 3s linear infinite;
+    color: #2da2ff;
+    font-family: 'Rubik Iso', cursive;
+}
+@keyframes textAnimation {
+    0%, 100% {
+        color: #2da2ff;
+    }
+    25% {
+        color: #ff337a;
+    }
+    50% {
+        color: #ffff00;
+    }
+    75% {
+        color: #00ff00;
+    }
+}
